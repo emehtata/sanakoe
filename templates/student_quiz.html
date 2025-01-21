@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanakoe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Sanakoe</h1>
+    <form method="post" action="/submit_quiz">
+        <p>Kirjoita oikea käännös annetuille sanoille:</p>
+        <ul>
+            {% for word in words %}
+            <li>
+                {{ word }}: <input type="text" name="answer_{{ loop.index }}" required>
+                <input type="hidden" name="word_{{ loop.index }}" value="{{ word }}">
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Lähetä vastaukset</button>
+    </form>
+    </div>
+</body>
+</html>

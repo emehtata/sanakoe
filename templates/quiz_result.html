@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanakokeen tulokset</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Sanakokeen tulokset</h1>
+    <p>Sait {{ correct_count }} oikein {{ total_count }} sanasta.</p>
+
+    <h2>Vastaukset:</h2>
+    <ul>
+        {% for word, answer, result in results %}
+            <li>
+                Sana: <strong>{{ word }}</strong><br>
+                Vastauksesi: <strong>{{ answer }}</strong><br>
+                Tulos: <strong>{{ result }}</strong>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/student">Palaa takaisin</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <title>Opettajan sanalista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Lisää sanoja sanakokeeseen</h1>
+    <form method="post">
+        <label for="group_name">Sanakokeen nimi:</label>
+        <input type="text" name="group_name" required><br>
+        <label for="language_from">Lähtökieli:</label>
+        <input type="text" name="language_from" required><br>
+        <label for="language_to">Kohdekieli:</label>
+        <input type="text" name="language_to" required><br>
+        <label for="word_list">Syötä sanat ja käännökset (sana;käännös) riveittäin:</label><br>
+        <textarea name="word_list" rows="10" cols="50" required></textarea><br>
+        <button type="submit">Tallenna sanakoe</button>
+    </form>
+    <a href="/student">Oppilaan peli</a>
+    </div>
+</body>
+</html>
